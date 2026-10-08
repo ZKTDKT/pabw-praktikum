@@ -79,3 +79,18 @@ Navbar menggunakan Flexbox.
 Galeri menu menggunakan Grid.
 Galeri menggunakan repeat(auto-fit`, minmax(16rem, 1fr)).
 Menu dan Form menggunakan area bernama.
+
+## Pertemuan 6 — Responsif Mobile-First
+
+
+Membuat halaman responsif menggunakan viewport, satuan relatif, dan media query.
+
+Pengujian dilakukan pada:
+- 360 px
+- 768 px
+- 1280 px
+
+
+## Deklarasi AI Pertemuan 8
+
+Saya menggunakan AI untuk membantu memahami instruksi worksheet dan membantu saya bial terjadi error ini kenapa semua baik baik aja
