@@ -105,3 +105,4 @@ const urutProyek = [...daftarProyek].sort((a, b) =>
 
 console.table(urutProyek);
 console.table(daftarProyek);
+
