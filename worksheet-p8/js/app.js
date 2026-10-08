@@ -32,7 +32,12 @@ const kota = profilAman.alamat?.kota ?? "Kota belum diisi";
 console.log(pilihanAktif);
 console.log(namaTampilan);
 console.log(kota);
-const kalimat = `Nama saya ${profil.nama}, saya ${profil.peran}.`;
+function buatPerkenalan({ nama, peran }) {
+  return `${nama} — ${peran}`;
+}
+const formatKeahlian = (daftar) => daftar.join(" · ");
+
+const kalimat = buatPerkenalan(profil);
 
 console.log(nama);
 console.log(nim);
@@ -40,4 +45,23 @@ console.log(peran);
 console.log(keahlian);
 console.log(jumlahProyek);
 console.log(kalimat);
+console.log(formatKeahlian(profil.keahlian));
 console.log(profil);
+console.log(buatPerkenalan({
+  nama: "Budi",
+  peran: "Mahasiswa Teknik"
+}));
+
+console.log(buatPerkenalan({
+  nama: "Sinta",
+  peran: "Web Developer"
+}));
+
+console.log(buatPerkenalan({
+  nama: "Raka",
+  peran: "UI/UX Designer"
+}));
+
+console.log(formatKeahlian(["HTML", "CSS"]));
+console.log(formatKeahlian(["JavaScript", "PHP", "MySQL"]));
+console.log(formatKeahlian(["Java", "Python", "R"]));
