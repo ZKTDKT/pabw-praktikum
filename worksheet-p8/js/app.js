@@ -9,6 +9,7 @@ const keahlian = [
 ];
 
 const jumlahProyek = 3;
+const tahun = 2026;
 
 const profil = {
   nama: nama,
@@ -105,4 +106,9 @@ const urutProyek = [...daftarProyek].sort((a, b) =>
 
 console.table(urutProyek);
 console.table(daftarProyek);
+
+
+document.querySelector("#namaProfil").textContent = profil.nama;
+document.querySelector("#nimProfil").textContent = profil.nim;
+document.querySelector("#tahunProfil").textContent = tahun;
 
