@@ -17,6 +17,24 @@ const profil = {
   keahlian: keahlian
 };
 
+const daftarProyek = [
+  {
+    judul: "Website Menu Makanan Ala Anak Kos",
+    tahun: 2026,
+    selesai: true
+  },
+  {
+    judul: "Website Profil HTML dan CSS",
+    tahun: 2026,
+    selesai: true
+  },
+  {
+    judul: "Praktikum JavaScript PABW",
+    tahun: 2026,
+    selesai: false
+  }
+];
+
 let pilihanAktif = "semua";
 
 const namaTampilan = null ?? nama;
@@ -65,3 +83,25 @@ console.log(buatPerkenalan({
 console.log(formatKeahlian(["HTML", "CSS"]));
 console.log(formatKeahlian(["JavaScript", "PHP", "MySQL"]));
 console.log(formatKeahlian(["Java", "Python", "R"]));
+console.table(daftarProyek);
+
+const judulProyek = daftarProyek.map((proyek) => proyek.judul);
+
+console.table(judulProyek);
+
+const proyekSelesai = daftarProyek.filter((proyek) => proyek.selesai);
+
+console.table(proyekSelesai);
+
+const proyekDicari = daftarProyek.find(
+  (proyek) => proyek.judul === "Website Profil HTML dan CSS"
+);
+
+console.log(proyekDicari);
+
+const urutProyek = [...daftarProyek].sort((a, b) =>
+  a.judul.localeCompare(b.judul)
+);
+
+console.table(urutProyek);
+console.table(daftarProyek);
