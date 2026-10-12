@@ -96,5 +96,11 @@ tbody.katalog .kartu td {
   overflow-wrap: anywhere;
 }
 
+#filter button.aktif {
+  background: var(--color-fg);
+  color: var(--color-bg);
+  border-color: var(--color-focus);
+}
+
 
 

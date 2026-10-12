@@ -3,6 +3,7 @@ import { daftarProyek } from "./app.js";
 
 const wadah = document.querySelector("#daftar");
 const kosong = document.querySelector("#kosong");
+const barisFilter = document.querySelector("#filter");
 
 function buatKartu(proyek) {
   const li = document.createElement("li");
@@ -27,4 +28,31 @@ function render(daftar) {
   });
 }
 
+
+function tandaiTombolAktif(tombolAktif) {
+  document.querySelectorAll("#filter button").forEach((tombol) => {
+    tombol.classList.toggle("aktif", tombol === tombolAktif);
+  });
+}
+
+barisFilter.addEventListener("click", (event) => {
+  const tombol = event.target.closest("button");
+  if (!tombol || !barisFilter.contains(tombol)) return;
+
+  const kategori = tombol.dataset.kategori;
+
+  const terpilih = daftarProyek.filter(
+    (proyek) =>
+      kategori === "semua" || proyek.kategori === kategori
+  );
+
+  render(terpilih);
+  tandaiTombolAktif(tombol);
+});
+
 render(daftarProyek);
+
+tandaiTombolAktif(
+  barisFilter.querySelector('[data-kategori="semua"]')
+);
+
