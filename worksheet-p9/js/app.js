@@ -18,21 +18,24 @@ const profil = {
   keahlian: keahlian
 };
 
-const daftarProyek = [
+export const daftarProyek = [
   {
     judul: "Website Menu Makanan Ala Anak Kos",
     tahun: 2026,
-    selesai: true
+    selesai: true,
+    kategori: "menu"
   },
   {
     judul: "Website Profil HTML dan CSS",
     tahun: 2026,
-    selesai: true
+    selesai: true,
+    kategori: "profil"
   },
   {
     judul: "Praktikum JavaScript PABW",
     tahun: 2026,
-    selesai: false
+    selesai: false,
+    kategori: "javascript"
   }
 ];
 
