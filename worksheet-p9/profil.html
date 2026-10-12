@@ -82,7 +82,7 @@
 
             <tbody class="katalog">
               <tr class="kartu">
-                <tkartu>1</tkartu>
+                <td>1</td>
                 <td>Nasi Dadar 2 Telur</td>
                 <td>Rp. 15.000</td>
               </tr>
@@ -121,36 +121,58 @@
           </section>
 
 
-        <section id="form">
-          <h2>Form Pesanan</h2>
+       
+<section id="form">
+  <h2>Form Pesanan</h2>
 
-          <form>
-            <div class="form-kolom">
-              <label for="nama">Nama:</label>
-              <input type="text" id="nama" name="nama" required />
-              <p class="pesan-galat">Nama wajib diisi</p>
-            </div>
+  <form novalidate>
+    <div class="form-kolom">
+      <label for="nama">Nama:</label>
+      <input
+        type="text"
+        id="nama"
+        name="nama"
+        required
+      />
+      <p class="pesan-galat">
+        Nama wajib diisi. Masukkan nama terlebih dahulu.
+      </p>
+    </div>
 
-            <div class="form-kolom">
-              <label for="Menu-Pesanan">Menu Pesanan:</label>
-              <input
-                type="text"
-                id="Menu-Pesanan"
-                name="Menu-Pesanan"
-                required
-              />
-              <p class="pesan-galat">Menu pesanan wajib diisi</p>
-            </div>
+    <div class="form-kolom">
+      <label for="Menu-Pesanan">Menu Pesanan:</label>
+      <input
+        type="text"
+        id="Menu-Pesanan"
+        name="Menu-Pesanan"
+        required
+      />
+      <p class="pesan-galat">
+        Menu pesanan wajib diisi. Masukkan nama menu.
+      </p>
+    </div>
 
-            <div class="form-kolom">
-              <label for="jumlah">Jumlah:</label>
-              <input type="number" id="jumlah" name="jumlah" required />
-              <p class="pesan-galat">Jumlah wajib diisi</p>
-            </div>
+    <div class="form-kolom">
+      <label for="jumlah">Jumlah:</label>
+      <input
+        type="number"
+        id="jumlah"
+        name="jumlah"
+        min="1"
+        step="1"
+        required
+      />
+      <p class="pesan-galat">
+        Jumlah harus berupa bilangan bulat minimal 1.
+      </p>
+    </div>
 
-            <button type="submit">Simpan</button>
-          </form>
-        </section>
+   <p id="status-pesanan" role="status" hidden></p>
+   <button type="submit" disabled>Simpan</button>
+
+<button type="submit" disabled>Simpan</button>
+  </form>
+</section>
       </main>
 
       <!-- TODO C.3: buat <footer> di sini.
