@@ -94,3 +94,42 @@ Pengujian dilakukan pada:
 ## Deklarasi AI Pertemuan 8
 
 Saya menggunakan AI untuk membantu memahami instruksi worksheet dan membantu saya bial terjadi error ini kenapa semua baik baik aja
+
+
+
+# PABW Praktikum — Pertemuan 9
+
+**Nama:** ALDI  
+**NIM:** 25523188  
+**Mata Kuliah:** Pengembangan Aplikasi Berbasis Web
+
+## Deskripsi
+
+Tugas ini merupakan praktikum Pertemuan 9 tentang DOM, Event, dan Interaktivitas menggunakan HTML, CSS, dan JavaScript.
+
+Halaman web berisi menu makanan, daftar proyek, tombol filter, dan form pesanan.
+
+## Fitur yang Dikerjakan
+
+- Menampilkan daftar proyek dari data JavaScript.
+- Membuat tombol filter berdasarkan kategori proyek.
+- Menampilkan pesan ketika tidak ada proyek yang cocok.
+- Memvalidasi form pesanan tanpa memuat ulang halaman.
+- Menampilkan pesan kesalahan pada kolom yang belum benar.
+
+## Struktur File
+
+- `profil.html` — halaman utama.
+- `tokens.css` — variabel desain.
+- `base.css` — aturan dasar halaman.
+- `layout.css` — pengaturan tata letak.
+- `komponen.css` — tampilan komponen.
+- `tema.css` — pengaturan tema.
+- `responsif.css` — tampilan responsif.
+- `js/app.js` — data profil dan proyek.
+- `js/dom.js` — pengaturan DOM, filter, dan validasi form.
+- `bukti/` — tangkapan layar pengujian.
+
+## Penggunaan AI
+
+menggunakan ChatGPT untuk membantu memahami instruksi tugas dan memperbaiki kode JavaScript. Saya menguji kode sendiri melalui browser dan Console, serta memeriksa hasil filter dan validasi form sebelum mengumpulkan tugas.
