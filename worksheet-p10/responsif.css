@@ -1,0 +1,45 @@
+/* DASAR — LAYAR SEMPIT */
+
+.isi {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+tbody.katalog {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+/* TABLET — 48rem */
+@media (min-width: 48rem) {
+  tbody.katalog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* DESKTOP — 60rem */
+@media (min-width: 60rem) {
+  .isi {
+    grid-template-columns: 16rem 1fr;
+  }
+
+  tbody.katalog {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
