@@ -126,6 +126,9 @@ async function ujiAmbilProyek() {
     const data = await ambilProyek();
     console.log(data);
 
+    const badan = JSON.stringify(data);
+    console.log(typeof badan);
+
     if (pesan) {
       pesan.hidden = true;
     }
