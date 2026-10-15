@@ -119,5 +119,25 @@ document.querySelector("#nimProfil").textContent = profil.nim;
 document.querySelector("#tahunProfil").textContent = tahun;
 
 
-ambilProyek().then((data) => console.log(data));
+async function ujiAmbilProyek() {
+  const pesan = document.querySelector('#kosong');
 
+  try {
+    const data = await ambilProyek();
+    console.log(data);
+
+    if (pesan) {
+      pesan.hidden = true;
+    }
+  } catch (galat) {
+    if (pesan) {
+      pesan.textContent =
+        'Data gagal dimuat. Periksa koneksi, lalu muat ulang halaman.';
+      pesan.hidden = false;
+    }
+
+    console.error('Gagal di app.js:', galat.message);
+  }
+}
+
+ujiAmbilProyek();
