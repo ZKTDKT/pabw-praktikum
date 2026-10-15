@@ -133,3 +133,12 @@ Halaman web berisi menu makanan, daftar proyek, tombol filter, dan form pesanan.
 ## Penggunaan AI
 
 menggunakan ChatGPT untuk membantu memahami instruksi tugas dan memperbaiki kode JavaScript. Saya menguji kode sendiri melalui browser dan Console, serta memeriksa hasil filter dan validasi form sebelum mengumpulkan tugas.
+
+
+### Pertemuan 10 — JavaScript Asinkron
+
+**Penggunaan AI:** 1. Membantu saya dalam menaro code di git, memberi nama
+2. menanyakan struktur kesimpulan cepat worksheet, seperti disuruh ngpain
+3. menanyakan kode tdk valid, nyasar
+4. Membantu saya membuat kalimat jawaban sayaa menjadi bagus
+5.dan menanyakan bukti apa saja yang perlu saya kirimkan

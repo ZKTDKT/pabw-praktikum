@@ -1,9 +1,8 @@
 
-import { daftarProyek } from "./app.js";
-
 const wadah = document.querySelector("#daftar");
 const kosong = document.querySelector("#kosong");
 const barisFilter = document.querySelector("#filter");
+const muatEl = document.querySelector("#muat");
 
 function buatKartu(proyek) {
   const li = document.createElement("li");
@@ -13,10 +12,11 @@ function buatKartu(proyek) {
   return li;
 }
 
-function render(daftar) {
+export function render(daftar) {
   wadah.textContent = "";
 
   if (daftar.length === 0) {
+    kosong.textContent = "Belum ada proyek.";
     kosong.hidden = false;
     return;
   }
@@ -28,34 +28,43 @@ function render(daftar) {
   });
 }
 
-
 function tandaiTombolAktif(tombolAktif) {
   document.querySelectorAll("#filter button").forEach((tombol) => {
     tombol.classList.toggle("aktif", tombol === tombolAktif);
   });
 }
 
-barisFilter.addEventListener("click", (event) => {
-  const tombol = event.target.closest("button");
-  if (!tombol || !barisFilter.contains(tombol)) return;
+export function pasangFilter(daftar) {
+  barisFilter.addEventListener("click", (event) => {
+    const tombol = event.target.closest("button");
 
-  const kategori = tombol.dataset.kategori;
+    if (!tombol || !barisFilter.contains(tombol)) return;
 
-  const terpilih = daftarProyek.filter(
-    (proyek) =>
-      kategori === "semua" || proyek.kategori === kategori
+    const kategori = tombol.dataset.kategori;
+
+    const terpilih = daftar.filter(
+      (proyek) =>
+        kategori === "semua" || proyek.kategori === kategori
+    );
+
+    render(terpilih);
+    tandaiTombolAktif(tombol);
+  });
+
+  tandaiTombolAktif(
+    barisFilter.querySelector('[data-kategori="semua"]')
   );
+}
 
-  render(terpilih);
-  tandaiTombolAktif(tombol);
-});
+export function aturMemuat(aktif) {
+  muatEl.hidden = !aktif;
+}
 
-render(daftarProyek);
-
-tandaiTombolAktif(
-  barisFilter.querySelector('[data-kategori="semua"]')
-);
-
+export function tampilkanGalat(pesan) {
+  wadah.textContent = "";
+  kosong.textContent = pesan;
+  kosong.hidden = false;
+}
 
 const formPesanan = document.querySelector("#form form");
 const inputNama = document.querySelector("#nama");

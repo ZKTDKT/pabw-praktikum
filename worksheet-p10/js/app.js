@@ -1,5 +1,10 @@
 import { ambilProyek } from "./api.js";
-
+import {
+  render,
+  pasangFilter,
+  aturMemuat,
+  tampilkanGalat
+} from "./dom.js";
 
 const nama = "ALDI";
 const nim = "25523188";
@@ -21,26 +26,6 @@ const profil = {
   keahlian: keahlian
 };
 
-export const daftarProyek = [
-  {
-    judul: "Website Menu Makanan Ala Anak Kos",
-    tahun: 2026,
-    selesai: true,
-    kategori: "menu"
-  },
-  {
-    judul: "Website Profil HTML dan CSS",
-    tahun: 2026,
-    selesai: true,
-    kategori: "profil"
-  },
-  {
-    judul: "Praktikum JavaScript PABW",
-    tahun: 2026,
-    selesai: false,
-    kategori: "javascript"
-  }
-];
 
 let pilihanAktif = "semua";
 
@@ -90,28 +75,6 @@ console.log(buatPerkenalan({
 console.log(formatKeahlian(["HTML", "CSS"]));
 console.log(formatKeahlian(["JavaScript", "PHP", "MySQL"]));
 console.log(formatKeahlian(["Java", "Python", "R"]));
-console.table(daftarProyek);
-
-const judulProyek = daftarProyek.map((proyek) => proyek.judul);
-
-console.table(judulProyek);
-
-const proyekSelesai = daftarProyek.filter((proyek) => proyek.selesai);
-
-console.table(proyekSelesai);
-
-const proyekDicari = daftarProyek.find(
-  (proyek) => proyek.judul === "Website Profil HTML dan CSS"
-);
-
-console.log(proyekDicari);
-
-const urutProyek = [...daftarProyek].sort((a, b) =>
-  a.judul.localeCompare(b.judul)
-);
-
-console.table(urutProyek);
-console.table(daftarProyek);
 
 
 document.querySelector("#namaProfil").textContent = profil.nama;
@@ -119,28 +82,27 @@ document.querySelector("#nimProfil").textContent = profil.nim;
 document.querySelector("#tahunProfil").textContent = tahun;
 
 
-async function ujiAmbilProyek() {
-  const pesan = document.querySelector('#kosong');
+
+async function muat() {
+  aturMemuat(true);
 
   try {
-    const data = await ambilProyek();
-    console.log(data);
+    const daftar = await ambilProyek();
 
-    const badan = JSON.stringify(data);
+    const badan = JSON.stringify(daftar);
     console.log(typeof badan);
 
-    if (pesan) {
-      pesan.hidden = true;
-    }
+    pasangFilter(daftar);
+    render(daftar);
   } catch (galat) {
-    if (pesan) {
-      pesan.textContent =
-        'Data gagal dimuat. Periksa koneksi, lalu muat ulang halaman.';
-      pesan.hidden = false;
-    }
+    tampilkanGalat(
+      'Data gagal dimuat. Periksa koneksi, lalu muat ulang halaman.'
+    );
 
-    console.error('Gagal di app.js:', galat.message);
+    console.error(galat.message);
+  } finally {
+    aturMemuat(false);
   }
 }
 
-ujiAmbilProyek();
+muat();
