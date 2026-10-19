@@ -14,3 +14,11 @@ export const formatKeahlian = (daftar) => {
 };
 
 export const tahun = 2026;
+
+export function saring(daftar, kategori) {
+    return daftar.filter(
+        (proyek) =>
+            kategori === "semua" ||
+            proyek.kategori === kategori
+    );
+}

@@ -1,5 +1,7 @@
-
-import { pilihKategori } from "./state.js";
+import {
+    pilihKategori,
+    tambahFavorit
+} from "./state.js";
 
 export function pasangPendengar() {
     const barisFilter = document.querySelector("#filter");
@@ -11,6 +13,16 @@ export function pasangPendengar() {
 
         pilihKategori(tombol.dataset.kategori);
     });
+
+const wadah = document.querySelector("#daftar");
+
+wadah.addEventListener("click", (event) => {
+    const tombol = event.target.closest(".favorit");
+
+    if (!tombol) return;
+
+    tambahFavorit(Number(tombol.dataset.id));
+});
 
     const formPesanan = document.querySelector("#form form");
     const inputNama = document.querySelector("#nama");

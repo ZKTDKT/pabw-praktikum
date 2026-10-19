@@ -16,3 +16,11 @@ export function pilihKategori(nilai) {
     state.kategoriAktif = nilai;
     render(state);
 }
+
+export function tambahFavorit(id) {
+    if (state.favorit.includes(id)) return;
+
+    state.favorit = [...state.favorit, id];
+
+    render(state);
+}
