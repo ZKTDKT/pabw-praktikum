@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "judul": "Website Menu Makanan Ala Anak Kos",
+    "tahun": 2026,
+    "selesai": true,
+    "kategori": "menu"
+  },
+  {
+    "id": 2,
+    "judul": "Website Profil HTML dan CSS",
+    "tahun": 2026,
+    "selesai": true,
+    "kategori": "profil"
+  },
+  {
+    "id": 3,
+    "judul": "Praktikum JavaScript PABW",
+    "tahun": 2026,
+    "selesai": false,
+    "kategori": "javascript"
+  }
+]
