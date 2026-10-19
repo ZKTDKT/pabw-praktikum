@@ -1,7 +1,7 @@
 
 import { ambilProyek } from "./api.js";
 import { profil, tahun } from "./data.js";
-import { isiProyek } from "./state.js";
+import { isiProyek, pulihkan, muat } from "./state.js";
 
 import {
     tampilkanProfil,
@@ -12,6 +12,8 @@ import {
 import { pasangPendengar } from "./events.js";
 
 async function mulai() {
+    pulihkan(muat());
+
     tampilkanProfil(profil, tahun);
     pasangPendengar();
     aturMemuat(true);
@@ -27,6 +29,5 @@ async function mulai() {
         aturMemuat(false);
     }
 }
-
 
 mulai();

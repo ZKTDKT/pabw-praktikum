@@ -1,6 +1,7 @@
 import {
     pilihKategori,
-    tambahFavorit
+    tambahFavorit,
+    aturUlang
 } from "./state.js";
 
 export function pasangPendengar() {
@@ -23,6 +24,14 @@ wadah.addEventListener("click", (event) => {
 
     tambahFavorit(Number(tombol.dataset.id));
 });
+
+const tombolAturUlang = document.querySelector("#atur-ulang");
+
+if (tombolAturUlang) {
+    tombolAturUlang.addEventListener("click", aturUlang);
+}
+
+
 
     const formPesanan = document.querySelector("#form form");
     const inputNama = document.querySelector("#nama");
