@@ -171,3 +171,16 @@ Token, kata sandi, dan data pribadi sensitif tidak disimpan di `localStorage` ka
 ### 6. Deklarasi Penggunaan AI
 AI digunakan untuk membantu memahami instruksi worksheet, menjelaskan konsep modul JavaScript dan `localStorage`, serta membantu menyusun dokumentasi. Implementasi, pemeriksaan kode, dan pengujian akhir dilakukan oleh saya sendiri. Saran AI diperiksa kembali dan disesuaikan dengan hasil pekerjaan.
 
+## Pertemuan 12 — Build Tooling, npm, dan Framework SPA
+
+### Versi perkakas
+- Node.js: v24.20.0
+- npm: 11.19.0
+
+### Ukuran sebelum dan sesudah build
+- Sebelum build (`npm run dev`): 2,0 MB
+- Sesudah build (`npm run preview`): 456 kB
+
+### Deklarasi penggunaan AI
+
+menggunakan ChatGPT untuk membantu memahami instruksi tugas dan memperbaiki/kode yang saya egak tau. Saya menguji kode sendiri melalui browser dan Console, serta membantu bahasa saya jadi formal
