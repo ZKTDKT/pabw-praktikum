@@ -38,28 +38,7 @@ function tandaiTombolAktif(kategoriAktif) {
     });
 }
 
-export function render(state) {
-    wadah.textContent = "";
 
-    const tampil = saring(
-    state.daftarProyek,
-    state.kategoriAktif
-);
-
-    tandaiTombolAktif(state.kategoriAktif);
-
-    if (tampil.length === 0) {
-        kosong.textContent = "Belum ada proyek.";
-        kosong.hidden = false;
-        return;
-    }
-
-    kosong.hidden = true;
-
-   tampil.forEach((proyek) => {
-    wadah.append(buatKartu(proyek, state.favorit));
-});
-}
 
 export function aturMemuat(aktif) {
     muatEl.hidden = !aktif;
