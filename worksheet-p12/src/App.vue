@@ -1,5 +1,14 @@
+<script setup>
+import FormKontak from './components/FormKontak.vue'
+import DaftarProyek from './components/DaftarProyek.vue'
+import TombolFilter from './components/TombolFilter.vue'
+import { profil } from './data.js'
+import KepalaProfil from './components/KepalaProfil.vue'
+</script>
+
 <template>
   <div class="page">
+  <KepalaProfil :profil="profil" />
       <!-- TODO C.1: buat <header> di sini.
        Isinya: satu <h1> berisi judul halaman Anda.
        Di dalamnya juga ada <nav> berisi 3 tautan ke bagian halaman. -->
@@ -76,79 +85,18 @@
         <!-- TODO E.1: di dalam section kedua, buat form Anda.
          Wajib ada: minimal 3 kolom, setiap kolom punya <label for> yang
          cocok dengan id input-nya, dan satu atribut validasi. -->
-         <section id="proyek">
 
-            <h2>Proyek Saya</h2>
-              <div id="filter">
-                 <button type="button" id="atur-ulang">Atur ulang</button>
-                 <button type="button" data-kategori="semua">Semua</button>
-                 <button type="button" data-kategori="menu">Menu</button>
-                  <button type="button" data-kategori="profil">Profil</button>
-                  <button type="button" data-kategori="javascript">JavaScript</button>
-                  <button type="button" data-kategori="lainnya">Lainnya</button>
-              </div>
-                <ul id="daftar"></ul>
-                  <p id="kosong" hidden>
-                    Tidak ada proyek yang ditampilkan.
-                  </p>
-                  <p id="muat" hidden>
-                    Memuat proyek...
-                  </p>
-          </section>
+<section id="proyek">
+  <h2>Proyek Saya</h2>
 
+  <TombolFilter />
 
-       
-<section id="form">
-  <h2>Form Pesanan</h2>
-
-  <form novalidate>
-    <div class="form-kolom">
-      <label for="nama">Nama:</label>
-      <input
-        type="text"
-        id="nama"
-        name="nama"
-        required
-      />
-      <p class="pesan-galat">
-        Nama wajib diisi. Masukkan nama terlebih dahulu.
-      </p>
-    </div>
-
-    <div class="form-kolom">
-      <label for="Menu-Pesanan">Menu Pesanan:</label>
-      <input
-        type="text"
-        id="Menu-Pesanan"
-        name="Menu-Pesanan"
-        required
-      />
-      <p class="pesan-galat">
-        Menu pesanan wajib diisi. Masukkan nama menu.
-      </p>
-    </div>
-
-    <div class="form-kolom">
-      <label for="jumlah">Jumlah:</label>
-      <input
-        type="number"
-        id="jumlah"
-        name="jumlah"
-        min="1"
-        step="1"
-        required
-      />
-      <p class="pesan-galat">
-        Jumlah harus berupa bilangan bulat minimal 1.
-      </p>
-    </div>
-
-   <p id="status-pesanan" role="status" hidden></p>
-   <button type="submit" disabled>Simpan</button>
-
-
-  </form>
+  <DaftarProyek />
 </section>
+
+
+ <FormKontak />
+ 
       </main>
 
       <!-- TODO C.3: buat <footer> di sini.
